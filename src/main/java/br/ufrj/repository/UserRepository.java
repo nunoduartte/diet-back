@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends JpaRepository<User, Long> {
 	
 	@Query(value = "select u from User u "
-				 + "where (u.username = :username or u.email = :email) and "
+				 + "where u.username = :username and "
 				 +        "u.password = :password")
-	public User loginUser(String username, String email, String password);
+	public User loginUser(String username, String password);
 }

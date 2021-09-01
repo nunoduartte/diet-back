@@ -22,11 +22,9 @@ public class UserController {
 
     @CrossOrigin()
     @PostMapping("/login")
-    public ResponseEntity<User> userLogin(@RequestParam(required = false) String username,
-                                          @RequestParam(required = false) String email,
-                                          @RequestParam(required = false) String password) {
+    public ResponseEntity<User> userLogin(@RequestBody User user) {
 
-        User userLogin = userRepository.loginUser(username, email, password);
+        User userLogin = userRepository.loginUser(user.getUsername(), user.getPassword());
 
         if(userLogin == null)
             return ResponseEntity.notFound().build();
