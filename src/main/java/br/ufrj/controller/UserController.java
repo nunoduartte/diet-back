@@ -14,11 +14,13 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @CrossOrigin()
     @PostMapping
     public User createUser(@RequestBody User user){
         return userRepository.save(user);
     }
 
+    @CrossOrigin()
     @PostMapping("/login")
     public ResponseEntity<User> userLogin(@RequestParam(required = false) String username,
                                           @RequestParam(required = false) String email,
