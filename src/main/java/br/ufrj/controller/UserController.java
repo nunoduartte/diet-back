@@ -1,5 +1,9 @@
 package br.ufrj.controller;
 
+import br.ufrj.model.Diet;
+import br.ufrj.model.Measures;
+import br.ufrj.model.UserData;
+import br.ufrj.repository.UserDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +18,18 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private UserDataController userDataController;
+
     @CrossOrigin()
     @PostMapping
     public User createUser(@RequestBody User user){
+        UserData userData = new UserData();
+        Measures measures = new Measures();
+        Diet diet = new Diet();
+        userData.setMeasures(measures);
+        userData.setDiet(diet);
+        user.setUserData(userDataController.createUserData(userData));
         return userRepository.save(user);
     }
 
