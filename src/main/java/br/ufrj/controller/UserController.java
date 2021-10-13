@@ -34,6 +34,12 @@ public class UserController {
     }
 
     @CrossOrigin()
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable(value = "id") Long userId){
+        return userRepository.findById(userId).get();
+    }
+
+    @CrossOrigin()
     @PostMapping("/login")
     public ResponseEntity<User> userLogin(@RequestBody User user) {
 
