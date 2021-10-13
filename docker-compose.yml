@@ -1,6 +1,12 @@
 version: "3"
 
 services:
+  foodquery:
+    container_name: food_query
+    image: registry.gitlab.com/mrcadu/food_query:latest
+    ports:
+      - 9000:9000
+
   mysql:
     container_name: diet_query
     image: mysql

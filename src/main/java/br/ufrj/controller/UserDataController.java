@@ -27,4 +27,10 @@ public class UserDataController {
         dietRepository.save(userData.getDiet());
         return userDataRepository.save(userData);
     }
+
+    @CrossOrigin()
+    @GetMapping
+    public UserData getUserData(@RequestBody Long userDataId){
+        return userDataRepository.findById(userDataId).get();
+    }
 }
