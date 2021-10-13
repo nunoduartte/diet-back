@@ -16,23 +16,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name="Diet")
-public class Diet {
-    @Id
+@Table(name="Meal")
+public class Meal {
+    
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-    private Float basalMetabolicRate;
-
-    private Float caloriesGoal;
-
-    private Float protein;
-
-    private Float carbohydrate;
-
-    private Float fat;
     
-    @OneToMany
-    @JoinColumn(name="diet_id")
-    private List<Meal> meals;
+	private String name;
+	
+	@OneToMany
+	@JoinColumn(name="meal_id")
+	private List<Food> foods;
 }

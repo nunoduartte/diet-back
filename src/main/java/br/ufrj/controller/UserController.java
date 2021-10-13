@@ -21,7 +21,7 @@ public class UserController {
     @Autowired
     private UserDataController userDataController;
 
-    @CrossOrigin()
+    @CrossOrigin
     @PostMapping
     public User createUser(@RequestBody User user){
         UserData userData = new UserData();
@@ -33,7 +33,7 @@ public class UserController {
         return userRepository.save(user);
     }
 
-    @CrossOrigin()
+    @CrossOrigin
     @PostMapping("/login")
     public ResponseEntity<User> userLogin(@RequestBody User user) {
 
