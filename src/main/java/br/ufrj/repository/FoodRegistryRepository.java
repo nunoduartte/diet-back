@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface FoodRegistryRepository extends JpaRepository<FoodRegistry, Long> {
-    @Query("select fr from FoodRegistry fr join fr.user u where u.id = :id and DATE(fr.registryDate) = DATE(NOW())")
+    @Query("select fr from FoodRegistry fr join fr.user u where u.id = :id and DATE(fr.registryDate) = DATE(NOW()) order by fr.registryDate")
     List<FoodRegistry> findAllByUserIdInTheSameDay(Long id);
 }
