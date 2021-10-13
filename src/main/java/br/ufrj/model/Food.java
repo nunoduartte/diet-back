@@ -25,6 +25,8 @@ public class Food {
     
     private String name;
     
+    private Float grams;
+    
     private Float protein;
 
     private Float carbohydrate;

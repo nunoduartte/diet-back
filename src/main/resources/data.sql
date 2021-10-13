@@ -31,12 +31,11 @@ VALUES(2, 'Refeição 2', 1);
 
 
 INSERT INTO diet.food
-(id, calories, carbohydrate, fat, protein, meal_id, name)
-VALUES(1, 1.0, 1.0, 1.0, 1.0, 1, 'banana');
+(id, calories, carbohydrate, fat, protein, meal_id, name, grams)
+VALUES(1, 1.0, 1.0, 1.0, 1.0, 1, 'banana', 10);
 INSERT INTO diet.food
-(id, calories, carbohydrate, fat, protein, meal_id, name)
-VALUES(2, 2.0, 2.0, 2.0, 2.0, 1, 'maça');
+(id, calories, carbohydrate, fat, protein, meal_id, name, grams)
+VALUES(2, 2.0, 2.0, 2.0, 2.0, 1, 'maça', 10);
 INSERT INTO diet.food
-(id, calories, carbohydrate, fat, protein, meal_id, name)
-VALUES(3, 3.0, 3.0, 3.0, 3.0, 2, 'morango');
-
+(id, calories, carbohydrate, fat, protein, meal_id, name, grams)
+VALUES(3, 3.0, 3.0, 3.0, 3.0, 2, 'morango', 10);
